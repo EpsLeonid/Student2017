@@ -4,7 +4,7 @@
 // File        : package_settings.sv
 // Company     : INP SB RAS
 // Created     : 03/11/2014
-// Created by  : Alina Ivanova
+// Created by  : Leonid Epshteyn
 //-----------------------------------------------------------------------------
 // Description : Package of settings
 //-----------------------------------------------------------------------------
