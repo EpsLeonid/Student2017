@@ -1,4 +1,4 @@
-function y = TreFil(n,t1,t2,k,l,M,A)
+function y = TreFil(n,t1,t2,k,l,M,A)                %функция треугольный фильтр
     function y = d(n)
         y = Gorbf(n,t1,t2,A) - Gorbf(n-k,t1,t2,A) ... 
         -Gorbf(n-l,t1,t2,A)+Gorbf(n-k-l,t1,t2,A);
