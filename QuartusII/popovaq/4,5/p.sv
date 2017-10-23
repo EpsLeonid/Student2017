@@ -1,4 +1,4 @@
-package p;
+package p; //параметризация
 	
 	parameter SIZE_REG           = 8;
 
