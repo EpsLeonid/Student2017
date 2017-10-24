@@ -34,8 +34,14 @@ input wire clk,
 output reg [reg_out:0]DATA_OUT
 );
 
+reg [reg_out:0]multy;
+reg [reg_out:0]sum;
+reg [reg_out:0]sum_2;
 always@(posedge clk) 
 begin
-	DATA_OUT <= A * B + C;
+	multy <= A * B;
+	sum <= C;
+	sum_2 <= sum;
+	DATA_OUT <= multy + sum_2;
 end
 endmodule 
