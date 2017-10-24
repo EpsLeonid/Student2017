@@ -27,27 +27,27 @@ module filter_2017 (
 //-----------------------------------------------------------------------------
 // Input Ports
 //-----------------------------------------------------------------------------
-	input  wire                                              reset,
-	input  wire                                              clk,
+	input  wire												reset,
+	input  wire												clk,
 //-----------------------------------------------------------------------------
-	input  wire                                              test_overlay,
-	input  wire                                              test_rate,
-	input  wire [SIZE_DELAY-1:0]                             test_delay,
+	input  wire												test_overlay,
+	input  wire												test_rate,
+	input  wire [SIZE_DELAY-1:0]							test_delay,
 //-----------------------------------------------------------------------------
 // Output Ports
 //-----------------------------------------------------------------------------
-	output wire [SIZE_ADC_DATA-1:0]                          output_data,
+	output wire [SIZE_ADC_DATA-1:0]							output_data,
 //-----------------------------------------------------------------------------
-	output wire [SIZE_ADC_DATA-1:0]                          output_data_exp_sig_gen,
+	output wire [SIZE_ADC_DATA-1:0]							output_data_exp_sig_gen,
 //-----------------------------------------------------------------------------
-	output wire [SIZE_FILTER_DATA-1:0]                       output_data_v1,
-	output wire [SIZE_FILTER_DATA-1:0]            		 output_data_v2,
-	output wire [SIZE_FILTER_DATA-1:0]                       output_data_v3,
-	output wire [SIZE_FILTER_DATA-1:0]                       output_data_v4,
-	output wire [SIZE_FILTER_DATA-1:0]                       output_data_v5,
-	output wire [SIZE_FILTER_DATA-1:0]                       output_data_v6,
-	output wire [SIZE_FILTER_DATA-1:0]                       output_data_v7,
-	output wire [SIZE_FILTER_DATA-1:0]                       output_data_v8);
+	output wire [SIZE_FILTER_DATA-1:0]						output_data_v1,
+	output wire [SIZE_FILTER_DATA-1:0]						output_data_v2,
+	output wire [SIZE_FILTER_DATA-1:0]						output_data_v3,
+	output wire [SIZE_FILTER_DATA-1:0]						output_data_v4,
+	output wire [SIZE_FILTER_DATA-1:0]						output_data_v5,
+	output wire [SIZE_FILTER_DATA-1:0]						output_data_v6,
+	output wire [SIZE_FILTER_DATA-1:0]						output_data_v7,
+	output wire [SIZE_FILTER_DATA-1:0]						output_data_v8);
 //-----------------------------------------------------------------------------
 // Signal declarations
 //-----------------------------------------------------------------------------
@@ -56,18 +56,18 @@ module filter_2017 (
 //-----------------------------------------------------------------------------
 // Signal Section
 //-----------------------------------------------------------------------------
-	assign output_data                                       = output_data_exp_sig_gen;
+	assign output_data										= output_data_exp_sig_gen;
 //-----------------------------------------------------------------------------
 // Sub Module Section
 //-----------------------------------------------------------------------------
 	exp_sig_gen ExpSigGen (
-		.clk                                                  (clk),
-		.reset                                                (reset),
-		.overlay                                              (test_overlay),
-		.rate                                                 (test_rate),
-		.delay                                                (test_delay),
-		.output_data                                          (output_data_exp_sig_gen));
-
+		.clk												(clk),
+		.reset												(reset),
+		.overlay											(test_overlay),
+		.rate												(test_rate),
+		.delay												(test_delay),
+		.output_data										(output_data_exp_sig_gen));
+/*
 	v1_filter FilterV1 (
 		.clk                                                  (clk),
 		.reset                                                (reset),
@@ -115,5 +115,6 @@ module filter_2017 (
 		.reset                                                (reset),
 		.input_data                                           (output_data_exp_sig_gen),
 		.output_data                                          (output_data_v8));
+*/
 //-----------------------------------------------------------------------------
 endmodule
