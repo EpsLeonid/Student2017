@@ -41,7 +41,6 @@ always@(posedge clk)
 begin
 	multy <= A * B;
 	sum <= C;
-	sum_2 <= sum;
-	DATA_OUT <= multy + sum_2;
+	DATA_OUT <= multy + sum;
 end
 endmodule 
