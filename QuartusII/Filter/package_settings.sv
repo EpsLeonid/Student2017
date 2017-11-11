@@ -29,4 +29,3 @@ package package_settings;
 	parameter SIZE_TEST_RAM_ADDR                             = 7;
 //-----------------------------------------------------------------------------
 endpackage
-
