@@ -9,8 +9,8 @@ module v4_filter
   output reg [SIZE_FILTER_DATA - 1 :0] output_data
 );
 
-reg  [SIZE_FILTER_DATA - 1 :0] signal[14:0];
-reg  [SIZE_FILTER_DATA - 1 :0] dkl, Mdkl, p, r, s;
+reg  [SIZE_FILTER_DATA * 2 + 2 :0] signal[14:0];
+reg  [SIZE_FILTER_DATA * 2 + 2 :0] dkl, Mdkl, p, r, s;
 
 always @ (posedge clk) 
 begin
@@ -21,7 +21,7 @@ begin
 		p <= 0;
 		r <= 0;
 		s <= 0;	
-		for (integer i = 0; i<=SIZE_FILTER_DATA - 1; i++)
+		for (integer i = 0; i<= N; i++)
 			begin
 				signal[i] <= 0;
 			end
@@ -31,16 +31,16 @@ begin
 	else
 		begin
 			signal[0] <= input_data;
-			for (integer i = 1; i<=SIZE_FILTER_DATA - 1; i++)
+			for (integer i = 1; i <= N; i++)
 				begin
 					signal[i] <= signal[i-1];
 				end
-			dkl	<= signal[0] - signal[k] + signal[l] - signal[k+l];
+			dkl	<= signal[N] - signal[N-k] - signal[N-l] + signal[N-k-l];
 			Mdkl <= dkl * M;
 			p <= p + dkl;
 			r <= p + Mdkl;
 			s <= s + r;
-			output_data <= s;
+			output_data <= s >>> 7;
 		end
 end
 
