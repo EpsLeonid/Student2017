@@ -9,7 +9,7 @@ module v4_filter
   output reg [SIZE_FILTER_DATA - 1 :0] output_data
 );
 
-reg  [SIZE_FILTER_DATA * 2 + 2 :0] signal[14:0];
+reg  [SIZE_FILTER_DATA * 2 + 2 :0] signal[0:N];
 reg  [SIZE_FILTER_DATA * 2 + 2 :0] dkl, Mdkl, p, r, s;
 
 always @ (posedge clk) 
