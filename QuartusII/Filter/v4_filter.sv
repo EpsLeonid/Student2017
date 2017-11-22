@@ -10,7 +10,7 @@ module v4_filter
 );
 
 reg  [SIZE_FILTER_DATA * 2 + 2 :0] signal[0:N];
-reg  [SIZE_FILTER_DATA * 2 + 2 :0] dkl, Mdkl, p, r, s;
+reg  [SIZE_FILTER_DATA * 2 + 2 :0] sum1, sum2, sum, dkl, Mdkl, p, r, s;
 
 always @ (posedge clk) 
 begin
@@ -36,6 +36,9 @@ begin
 					signal[i] <= signal[i-1];
 				end
 			dkl	<= signal[N] - signal[N-k] - signal[N-l] + signal[N-k-l];
+			sum1 <= signal[N] - signal[N-k];
+			sum2 <= signal[N-k-l] - signal[N-l];
+			sum <= sum1 + sum2;
 			Mdkl <= dkl * M;
 			p <= p + dkl;
 			r <= p + Mdkl;
