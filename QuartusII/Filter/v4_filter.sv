@@ -39,7 +39,7 @@ begin
 			sum1 <= signal[N] - signal[N-k];
 			sum2 <= signal[N-k-l] - signal[N-l];
 			sum <= sum1 + sum2;
-			Mdkl <= dkl * M;
+			Mdkl <= sum * M;
 			p <= p + dkl;
 			r <= p + Mdkl;
 			s <= s + r;
