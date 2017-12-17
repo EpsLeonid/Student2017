@@ -1,4 +1,7 @@
 import package_settings::*;
+import v6_parametery_2::*;
+
+
 
 module v6_filter
 
@@ -7,7 +10,7 @@ module v6_filter
      input wire [SIZE_ADC_DATA - 1:0] input_data, 
      output reg [SIZE_ADC_DATA * 2 + 2:0] output_data
 );
-import v6_parametery_2::*;
+
   reg signed [SIZE_ADC_DATA * 2 + 2:0] input_signal [size:0];
   reg signed [SIZE_ADC_DATA * 2 + 2:0] d1_d [size:0],d1_n, dk_n;
   reg signed [SIZE_ADC_DATA * 2 + 2:0] dk, d1, p, s, q, M1, M2;
