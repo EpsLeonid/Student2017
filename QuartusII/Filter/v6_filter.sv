@@ -1,9 +1,6 @@
 import package_settings::*;
 
-
-
-
-module v6_filter_2
+module v6_filter
 
 (    input wire clk, 
      input wire reset, 
