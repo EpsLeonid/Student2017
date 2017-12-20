@@ -1,6 +1,3 @@
-import v4_parameters::*;
-import package_settings::*;
-
 module v4_filter
 (
   input wire clk,
@@ -8,6 +5,7 @@ module v4_filter
   input wire [SIZE_ADC_DATA - 1: 0] input_data,
   output reg [SIZE_FILTER_DATA - 1 :0] output_data
 );
+import v4_parameters::*;
 
 reg  [SIZE_FILTER_DATA * 2 + 2 :0] signal[0:N];
 reg  [SIZE_FILTER_DATA * 2 + 2 :0] sum1, sum2, sum, dkl, Mdkl, p, r, s;
