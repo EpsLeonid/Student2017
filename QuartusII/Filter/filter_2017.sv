@@ -67,13 +67,13 @@ module filter_2017 (
 		.rate												(test_rate),
 		.delay												(test_delay),
 		.output_data										(output_data_exp_sig_gen));
-/*
+
 	v1_filter FilterV1 (
 		.clk                                                  (clk),
 		.reset                                                (reset),
 		.input_data                                           (output_data_exp_sig_gen),
 		.output_data                                          (output_data_v1));
-
+/*
 	v2_filter FilterV2 (
 		.clk                                                  (clk),
 		.reset                                                (reset),
