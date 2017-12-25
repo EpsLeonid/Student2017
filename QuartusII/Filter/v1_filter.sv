@@ -1,14 +1,15 @@
 import package_settings::*;
-import v1_filter_params::*;
 
 module v1_filter(
 	input clk,
 	input reset,
-	input signed [SIZE_ADC_DATA-1:0] input_data,
-	output logic signed [SIZE_FILTER_DATA-1:0] output_data);
+	input [SIZE_ADC_DATA-1:0] input_data,
+	output [SIZE_FILTER_DATA-1:0] output_data);
 
-	logic signed [SIZE_ADC_DATA-1:0] signal_window[k+l-1:0] = '{default:0};
-	logic signed [SIZE_FILTER_DATA-1:0] d = 0, m = 0, p = 0, r = 0, s = 0;
+import v1_filter_params::*;
+
+	logic [SIZE_ADC_DATA-1:0] signal_window[k+l-1:0] = '{default:0};
+	logic [SIZE_FILTER_DATA-1:0] d = 0, m = 0, p = 0, r = 0, s = 0;
 
 	always_ff @(posedge clk) begin
 		if (reset) begin
@@ -35,5 +36,5 @@ module v1_filter(
 		end
 	end
 
-	assign output_data = s;
+	assign output_data = s >>> 7;
 endmodule
