@@ -1,4 +1,4 @@
 package settings;
-parameter SIZE_REG_1 = 8;
-parameter SIZE_REG_2 = 16;
+parameter SIZE_REG_in = 8;
+parameter SIZE_REG_out = 16;
 endpackage 
