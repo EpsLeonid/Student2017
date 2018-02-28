@@ -1,3 +1,4 @@
+import package_settings::*;
 import p_v5::*; //параметризация
 
 module quartuss_v5(   //входы и выходы
