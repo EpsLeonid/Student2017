@@ -1,7 +1,7 @@
 import package_settings::*;
 import p_v5::*; //параметризация
 
-module quartuss_v5(   //входы и выходы
+module filterpopova_v5(   //входы и выходы
 	input clk,
 	input reset,
 	input [SIZE_ADC_DATA-1:0] input_data,
