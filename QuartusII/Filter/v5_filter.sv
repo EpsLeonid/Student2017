@@ -1,7 +1,7 @@
 import package_settings::*;
 import v5_parameters::*;//параметризация
 
-module filterpopova_v5(   //входы и выходы
+module v5_filter(   //входы и выходы
 	input clk,
 	input reset,
 	input [SIZE_ADC_DATA-1:0] input_data,
